@@ -29,6 +29,13 @@ reusable functions that solve specific tasks. This activity encourages:
 // Create a function that:
 // - Takes a name and a role (e.g., "Alice", "speaker")
 // - Returns a string in the format: "Name: Alice, Role: Speaker"
+function introduce(name,role){
+    return `Name: ${name}, Role: ${role}`;
+
+}
+
+
+console.log(introduce("Alice","Speaker"));
 
 // Steps:
 // 1. Define the function with two parameters.
@@ -51,7 +58,19 @@ reusable functions that solve specific tasks. This activity encourages:
 // 3. If so, apply a 10% discount.
 // 4. Return the final total.
 
+function calCost(attendees,cost)
+{
+    let totalCost = attendees * cost ;
+    if(attendees>100)
+        {
 
+            totalCost = totalCost * 0.9;
+
+        } 
+return totalCost;
+    }
+console.log("Total Cost: " + calCost(152,100));
+console.log("Total Cost: " + calCost(52,100));
 // ============================================
 // 🧩 Task 3: Validate Email
 // ============================================
@@ -59,6 +78,16 @@ reusable functions that solve specific tasks. This activity encourages:
 // - Takes an email string as input.
 // - Returns true if the email contains both "@" and "." characters.
 // - Returns false otherwise.
+function validEmail(email)
+{
+    if (email.includes("@") && email.includes(".")){
+        return true;
+    }
+        return false;
+}
+console.log("Email1:alice@gmail.com - "+ validEmail("alice@gmail.com"));
+console.log("Email2:alicegmail.com - "+ validEmail("alicegmail.com"));
+console.log("Email3:alicegmailcom - "+ validEmail("alicegmailcom"));
 
 // Steps:
 // 1. Check if the string includes both "@" and ".".

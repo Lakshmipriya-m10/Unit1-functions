@@ -28,47 +28,93 @@ This activity reinforces:
 ---
 */
 
+
 // ============================================
 // ❌ Original Code (Before Refactoring)
 // ============================================
 
 // Script 1 - Greeting multiple users
-console.log("Welcome, Alice!");
-console.log("Welcome, Bob!");
-console.log("Welcome, Charlie!");
 
-// Script 2 - Sum calculation
-let num1 = 5, num2 = 10;
-let sum = num1 + num2;
-console.log("The sum of 5 and 10 is " + sum);
+// console.log("Welcome, Alice!");
+// console.log("Welcome, Bob!");
+// console.log("Welcome, Charlie!");
+// Write a function to return a string
+// Use a parameter for inputting the name
 
-// Script 3 - Product calculation
-let product = num1 * num2;
-console.log("The product of 5 and 10 is " + product);
-
-// Script 4 - Print names from a list
-let names = ["Alice", "Bob", "Charlie"];
-console.log("Names in the list:");
-for (let i = 0; i < names.length; i++) {
-    console.log(names[i]);
+// Refactor
+function greet(name) {
+    console.log(`Welcome, ${name}!`);
 }
 
-/*
-===========================================
-🛠️ Steps for Refactoring
-===========================================
+greet("Alice");
+greet("Bob");
+greet("Charlie");
 
-🔹 Break Down Tasks into Functions:
-   - Identify repetitive patterns (e.g., greetings, calculations, list printing)
-   - Define separate functions for each task
+let greeting = greet("David");
+console.log(greeting);
 
-🔹 Write Functions with Parameters and Return Values:
-   - Parameterize functions for flexibility (e.g., pass in name, numbers, arrays)
-   - Use return statements where necessary
+// Script 2 - Sum calculation
 
-🔹 Refactor the Original Code:
-   - Replace repeated code with meaningful function calls
-   - Keep your code clean, readable, and easy to maintain
-*/
+let num1 = 5, num2 = 10;
+// let sum = num1 + num2;
+// console.log("The sum of 5 and 10 is " + sum);
 
-// ✅ Your refactored code goes below this line!
+// Create function with 2 parameters, a, b
+// log a sentence with the sum
+// return sum of a and b
+function addNumbers(a, b) {
+    let sum = a + b;
+    console.log(`The sum of ${a} and ${b} is ${sum}`);
+    return sum;
+}
+
+let num3 = 6, num4 = 15;
+addNumbers(5, 10);
+addNumbers(num1, num2);
+addNumbers(num3, num4);
+console.log(addNumbers(2, 24));
+
+// Script 3 - Product calculation
+
+let product = num1 * num2;
+// console.log("The product of 5 and 10 is " + product);
+
+function multiplyNumbers(a, b) {
+    let product = a * b;
+    console.log(`The product of ${a} and ${b} is ${product}`);
+    return product;
+}
+
+multiplyNumbers(num1, num2);
+multiplyNumbers(num3, num4);
+console.log(multiplyNumbers(2, 24));
+
+// Script 4 - Print names from a list
+
+let names = ["Alice", "Bob", "Charlie"];
+// console.log("Names in the list:");
+// for (let i = 0; i < names.length; i++) {
+//     console.log(names[i]);
+// }
+
+let moreNames = ["David", "Emma", "Fred"];
+
+function printNames(nameList) {
+    console.log("Names in the list:");
+    for (let name of nameList) {
+        console.log(name);
+    }
+}
+
+printNames(names);
+printNames(moreNames);
+
+// BONUS! Reuse one function within another
+function greetAll(nameList) {
+    for (let name of nameList) {
+        greet(name);
+    }
+}
+
+greetAll(names);
+greetAll(moreNames);
