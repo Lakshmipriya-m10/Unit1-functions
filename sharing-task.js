@@ -30,8 +30,9 @@ reusable functions that solve specific tasks. This activity encourages:
 // - Takes a name and a role (e.g., "Alice", "speaker")
 // - Returns a string in the format: "Name: Alice, Role: Speaker"
 function introduce(name,role){
+    for (introduce of names){
     return `Name: ${name}, Role: ${role}`;
-
+    }
 }
 
 
